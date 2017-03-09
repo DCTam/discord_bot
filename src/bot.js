@@ -11,7 +11,7 @@ let configs = require('./configs.json');
 bot.on('ready', () => {
 	console.log("Bot now running...");
 
-})
+});
 
 //Commands
 bot.on('message', (message) => {
@@ -29,6 +29,10 @@ bot.on('message', (message) => {
 		require('./commands/weather_command.js')(message, configs.weather_api_key);
 	}
 
-})
+	if(message.content.startsWith(configs.prefix + 'stalk')){
+		require('./commands/twitch_stalk.js')(message, configs.twitch_id);
+	}
+
+});
 
 bot.login(configs.token);

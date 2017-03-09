@@ -1,7 +1,7 @@
 module.exports = (message, key) => {
 	let request = require('request');
 
-	//Validate user input
+	//Validate user inputted ZIP code
 	let zip = message.content.split(" ")[1];
 	if(zip.length != 5){
 		message.channel.sendMessage("Please enter 5 digits for the ZIP code");
@@ -19,10 +19,10 @@ module.exports = (message, key) => {
 		function(err, res, body){
 
 			if(err){
-				message.channel.sendMessage("Cannot find location");
+				message.channel.sendMessage("Error calling API");
 				return;
 			}
-			if(body !== 'undefined'){
+			if(body.cod == 200){
 				console.log(body);
 				let tempF = (((body.main.temp - 273.15) * 1.8) + 32).toFixed(2);
 				message.channel.sendMessage(`The weather in ${body.name} is ${tempF} degrees Fahrenheit`);
