@@ -7,12 +7,6 @@ const bot = new Discord.Client();
 //Retrieve configurations
 let configs = require('./configs.json');
 
-//Bundle variables to pass to commands
-let args = {
-	configs,
-	bot
-}
-
 //Notify that bot is running
 bot.on('ready', () => {
 	console.log("Bot now running...");
@@ -30,6 +24,9 @@ bot.on('message', (message) => {
 
 	if(message.content.startsWith(configs.prefix + 'roll')){
 		require('./commands/roll_command.js')(message);
+	}
+	if(message.content.startsWith(configs.prefix + 'weather')){
+		require('./commands/weather_command.js')(message, configs.weather_api_key);
 	}
 
 })
