@@ -1,5 +1,4 @@
 module.exports = (message, id) => {
-	//let Promise = require("bluebird");
 	let rp = require('request-promise');
 
 	let username = message.content.split(" ")[1];
@@ -42,6 +41,3 @@ module.exports = (message, id) => {
 	})
 
 }
-
-//115495416
-//37402112
