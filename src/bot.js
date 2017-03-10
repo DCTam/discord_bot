@@ -33,6 +33,10 @@ bot.on('message', (message) => {
 		require('./commands/twitch_stalk.js')(message, configs.twitch_id);
 	}
 
+	if(message.content.startsWith(configs.prefix + 'rank')){
+		require('./commands/rank_scrape.js')(message);
+	}
+
 });
 
 bot.login(configs.token);
