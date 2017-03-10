@@ -29,7 +29,7 @@ bot.on('message', (message) => {
 		require('./commands/weather_command.js')(message, configs.weather_api_key);
 	}
 
-	if(message.content.startsWith(configs.prefix + 'stalk')){
+	if(message.content.startsWith(configs.prefix + 'ison')){
 		require('./commands/twitch_stalk.js')(message, configs.twitch_id);
 	}
 
