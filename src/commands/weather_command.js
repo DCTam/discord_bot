@@ -23,7 +23,6 @@ module.exports = (message, key) => {
 				return;
 			}
 			if(body.cod == 200){
-				console.log(body);
 				let tempF = (((body.main.temp - 273.15) * 1.8) + 32).toFixed(2);
 				message.channel.sendMessage('`The weather in ' + body.name + ' is ' + tempF + ' degrees Fahrenheit`');
 			}

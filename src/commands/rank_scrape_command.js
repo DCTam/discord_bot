@@ -14,10 +14,10 @@ module.exports = (message) => {
 		'Wins': '.color-stat-win',
 		'Losses': '.color-stat-loss'
 	})
-
     .data((data) => {
 		console.log(data);
-        message.channel.sendMessage('```Javascript\nBattle Tag: ' + battle_tag + 
+        message.channel.sendMessage('```Javascript' +
+									'\nBattle Tag: ' + battle_tag + 
 									'\nPlayed ' + data.LastPlayed + " ago" +
 									'\n' + data.LastUpdated + " ago" +
 									'\nRank: ' + data.Rank +

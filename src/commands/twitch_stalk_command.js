@@ -27,7 +27,8 @@ module.exports = (message, id) => {
 	})
 	.then((r) => {
 		if(r.stream != null){
-			message.channel.sendMessage('```javascript\n' + r.stream.channel.display_name + ' is playing ' + r.stream.game + 
+			message.channel.sendMessage('```javascript\n' + 
+										r.stream.channel.display_name + ' is playing ' + r.stream.game + 
 										'\nCurrent viewers: ' + r.stream.viewers +
 										'\nLink: ' + r.stream.channel.url +
 										'```');
