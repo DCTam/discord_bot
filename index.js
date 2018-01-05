@@ -43,6 +43,16 @@ bot.on('message', (message) => {
 		require('./src/commands/rank_scrape_command.js')(message);
 	}
 
+	// Returns information on a specific coin based on symbol.
+	if(message.content.startsWith(configs.prefix + 'coin')){
+		require('./src/commands/coin_market.js')(message);
+	}
+
+	// if(message.author.username == 'Jnt'){
+	// 	message.channel.sendMessage('stfu');
+	// }
+
+
 });
 
 bot.login(configs.token);
