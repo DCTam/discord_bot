@@ -48,7 +48,7 @@ bot.on('message', (message) => {
 		require('./src/commands/coin_market.js')(message);
 	}
     if(message.content.startsWith(configs.prefix+ 'fortRank')){
-        require('.src/commands/fortnite_tracker.js')(message,configs.fort_api_key);
+        require('./src/commands/fortnite_tracker.js')(message,configs.fort_api_key);
     }
 
 });
