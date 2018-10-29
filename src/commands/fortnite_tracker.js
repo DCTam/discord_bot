@@ -3,6 +3,8 @@ module.exports = (message,key) => {
 	let rp = require('request');
 	let username = message.content.split(" ")[1];
     let apiKey = key.content;
+    let rp = require('request-promise');
+    let username = message.content.split(" ")[1];
     let platform = 'pc';
     let url = `https://api.fortnitetracker.com/v1/profile/${platform}/${username}`;
     request({
@@ -10,7 +12,7 @@ module.exports = (message,key) => {
         json: true,
         headers:{
            'TRN-Api-Key': `${apiKey}`;
-        }
+        },
     }),
     function(error, res, body){
         if(error){
